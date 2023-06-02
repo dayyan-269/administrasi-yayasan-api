@@ -1,11 +1,16 @@
-const routes = [
-    {
-        method: 'GET',
-        path: '/',
-        handler: (request, h) => {
-            return 'Rest API untuk web administrasi'
-        }
-    }
+import BarangAnakAsuhanRoutes from './routes/BarangAnakAsuhanRoutes.js';
+
+let routes = [
+  {
+    method: 'GET',
+    path: '/',
+    handler: () => {
+      return 'Rest API untuk web administrasi yayasan';
+    },
+  },
 ];
 
-export default routes
+// Setiap penambahan routes perlu ditambahkan
+routes = routes.concat(BarangAnakAsuhanRoutes);
+
+export default routes;
