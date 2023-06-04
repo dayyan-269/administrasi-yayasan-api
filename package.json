@@ -14,9 +14,11 @@
   "dependencies": {
     "@hapi/boom": "^10.0.1",
     "@hapi/hapi": "^21.3.2",
+    "@hapi/jwt": "^3.2.0",
     "@supabase/supabase-js": "^2.24.0",
     "dotenv": "^16.1.1",
-    "joi": "^17.9.2"
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
