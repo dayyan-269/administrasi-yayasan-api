@@ -2,7 +2,7 @@ import * as Boom from '@hapi/boom';
 
 import supabaseClient from '../../../utils/supabaseClient.js';
 
-const findBarangAnakAsuhan = async (request, h) => {
+const findBarangAnakAsuhanById = async (request, h) => {
   const barangId = request.params.barangId;
 
   const findBarang = await supabaseClient
@@ -24,4 +24,4 @@ const findBarangAnakAsuhan = async (request, h) => {
     .code(200);
 };
 
-export default findBarangAnakAsuhan;
+export default findBarangAnakAsuhanById;

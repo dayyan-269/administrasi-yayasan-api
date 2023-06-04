@@ -1,6 +1,6 @@
 // Handlers
 import listBarangAnakAsuhan from '../handlers/Master/BarangAnakAsuhan/list.js';
-import findBarangAnakAsuhan from '../handlers/Master/BarangAnakAsuhan/find.js';
+import findBarangAnakAsuhanById from '../handlers/Master/BarangAnakAsuhan/findById.js';
 import createBarangAnakAsuhan from '../handlers/Master/BarangAnakAsuhan/create.js';
 import updateBarangAnakAsuhan from '../handlers/Master/BarangAnakAsuhan/update.js';
 import deleteBarangAnakAsuhan from '../handlers/Master/BarangAnakAsuhan/delete.js';
@@ -21,7 +21,7 @@ const BarangAnakAsuhanRoutes = [
   {
     method: 'GET',
     path: '/barang-anak/{barangId}',
-    handler: findBarangAnakAsuhan,
+    handler: findBarangAnakAsuhanById,
     options: {
       ext: {
         onPreHandler: { method: validateBarangAnakAsuhanId },
