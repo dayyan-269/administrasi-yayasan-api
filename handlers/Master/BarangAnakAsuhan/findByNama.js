@@ -2,15 +2,13 @@ import * as Boom from '@hapi/boom';
 
 import supabaseClient from '../../../utils/supabaseClient.js';
 
-const findBarangAnakAsuhan = async (request, h) => {
-  const barangId = request.params.barangId;
+const findBarangAnakAsuhanByNama = async (request, h) => {
+  const { nama } = request.query;
 
   const findBarang = await supabaseClient
     .from('barang_anak_asuhan')
     .select()
-    .eq('id', barangId)
-    .limit(1)
-    .single();
+    .ilike('nama', `%${nama}%`);
 
   if (findBarang.error) {
     throw Boom.internal(findBarang.error);
@@ -24,4 +22,4 @@ const findBarangAnakAsuhan = async (request, h) => {
     .code(200);
 };
 
-export default findBarangAnakAsuhan;
+export default findBarangAnakAsuhanByNama;
