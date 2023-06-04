@@ -1,3 +1,4 @@
+import AuthRoutes from './routes/AuthRoutes.js';
 import BarangAnakAsuhanRoutes from './routes/BarangAnakAsuhanRoutes.js';
 
 let routes = [
@@ -5,12 +6,17 @@ let routes = [
     method: 'GET',
     path: '/',
     handler: () => {
-      return 'Rest API untuk web administrasi yayasan';
+      return {
+        title: 'Rest API untuk web administrasi yayasan',
+      };
     },
   },
 ];
 
 // Setiap penambahan routes perlu ditambahkan
-routes = routes.concat(BarangAnakAsuhanRoutes);
+routes = routes.concat(
+  BarangAnakAsuhanRoutes, 
+  AuthRoutes
+);
 
 export default routes;
