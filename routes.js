@@ -10,13 +10,13 @@ let routes = [
         title: 'Rest API untuk web administrasi yayasan',
       };
     },
+    options: {
+      auth: false,
+    },
   },
 ];
 
 // Setiap penambahan routes perlu ditambahkan
-routes = routes.concat(
-  BarangAnakAsuhanRoutes, 
-  AuthRoutes
-);
+routes = routes.concat(BarangAnakAsuhanRoutes, AuthRoutes);
 
 export default routes;
