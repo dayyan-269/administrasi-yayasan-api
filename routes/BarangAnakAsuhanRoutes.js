@@ -1,10 +1,16 @@
+// Handlers
 import listBarangAnakAsuhan from '../handlers/Master/BarangAnakAsuhan/list.js';
 import findBarangAnakAsuhan from '../handlers/Master/BarangAnakAsuhan/find.js';
 import createBarangAnakAsuhan from '../handlers/Master/BarangAnakAsuhan/create.js';
 import updateBarangAnakAsuhan from '../handlers/Master/BarangAnakAsuhan/update.js';
 import deleteBarangAnakAsuhan from '../handlers/Master/BarangAnakAsuhan/delete.js';
 
-import BarangAnakAsuhanSchema from '../validators/BarangAnakAsuhanSchema.js';
+// Schemas
+import BarangAnakAsuhanSchema from '../Schemas/BarangAnakAsuhanSchema.js';
+
+// Extensions
+import validateBarangAnakAsuhanId from '../extensions/validateBarangAnakAsuhanId.js';
+import findBarangAnakAsuhanByNama from '../handlers/Master/BarangAnakAsuhan/findByNama.js';
 
 const BarangAnakAsuhanRoutes = [
   {
@@ -16,6 +22,16 @@ const BarangAnakAsuhanRoutes = [
     method: 'GET',
     path: '/barang-anak/{barangId}',
     handler: findBarangAnakAsuhan,
+    options: {
+      ext: {
+        onPreHandler: { method: validateBarangAnakAsuhanId },
+      },
+    },
+  },
+  {
+    method: 'GET',
+    path: '/barang-anak/search/{nama?}',
+    handler: findBarangAnakAsuhanByNama,
   },
   {
     method: 'POST',
@@ -35,12 +51,20 @@ const BarangAnakAsuhanRoutes = [
       validate: {
         payload: BarangAnakAsuhanSchema,
       },
+      ext: {
+        onPreHandler: { method: validateBarangAnakAsuhanId },
+      },
     },
   },
   {
     method: 'DELETE',
     path: '/barang-anak/{barangId}',
     handler: deleteBarangAnakAsuhan,
+    options: {
+      ext: {
+        onPreHandler: { method: validateBarangAnakAsuhanId },
+      },
+    },
   },
 ];
 
