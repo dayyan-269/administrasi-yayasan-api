@@ -1,22 +1,17 @@
 import * as dotenv from 'dotenv';
 import JWT from 'jsonwebtoken';
 
-import getJWTFormat from '../../utils/getJWTFormat.js';
+import getJWTFormat from './getJWTFormat.js';
 
 dotenv.config();
 
-const generateJWT = async (request, h) => {
+const generateJWT = async () => {
   const secret = process.env.SECRET || 'some_shared_secret';
   const token = getJWTFormat();
 
   const jwt = JWT.sign(token, secret);
 
-  return h
-    .response({
-      message: 'jwt successfully generated',
-      data: { jwt },
-    })
-    .code(200);
+  return jwt;
 };
 
 export default generateJWT;
