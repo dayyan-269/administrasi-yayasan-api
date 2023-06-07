@@ -2,7 +2,7 @@ import supabaseClient from '../../../utils/supabaseClient.js';
 import * as Boom from '@hapi/boom';
 
 const deleteKebutuhanMedis = async (request, h) => {
-  const kebutuhanId = request.params.KebutuhanId;
+  const kebutuhanId = request.params.kebutuhanId;
 
   const deleteKebutuhan = await supabaseClient
     .from('kebutuhan_medis')
