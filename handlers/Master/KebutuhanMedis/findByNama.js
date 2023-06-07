@@ -20,3 +20,5 @@ const findKebutuhanMedisByNama = async (request, h) => {
     })
     .code(200);
 };
+
+export default findKebutuhanMedisByNama;
