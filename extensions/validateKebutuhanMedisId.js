@@ -1,21 +1,21 @@
 import * as Boom from '@hapi/boom';
 
-import supabaseClient from '../utils/supabaseClient';
+import supabaseClient from '../utils/supabaseClient.js';
 
 const validateKebutuhanMedisId = async (request, h) => {
-  const { KebutuhanId } = request.params;
+  const { kebutuhanId } = request.params;
 
   const validateKebutuhanMedisId = await supabaseClient
     .from('kebutuhan_medis')
-    .select('*', { count: 'exact', head: true });
-  equal('id', KebutuhanId);
+    .select('*', { count: 'exact', head: true })
+    .eq('id', kebutuhanId);
 
-  if (validateKebutuhanId.error) {
-    return Boom.internal(validateKebutuhanId.error);
+  if (validateKebutuhanMedisId.error) {
+    return new Boom.internal(validateKebutuhanMedisId.error);
   }
 
-  if (validateKebutuhanId.count === 0) {
-    return Boom.notFound('Kebutuhan medis tidak ditemukan');
+  if (validateKebutuhanMedisId.count === 0) {
+    return new Boom.notFound('Kebutuhan medis tidak ditemukan');
   }
 
   return h.continue;
