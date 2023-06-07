@@ -30,7 +30,7 @@ const KebutuhanMedisRoutes = [
   },
   {
     method: 'GET',
-    path: '/kebutuhan-medis/seacrh/{nama}',
+    path: '/kebutuhan-medis/search/{nama?}',
     handler: findKebutuhanMedisByNama,
   },
   {
