@@ -6,7 +6,6 @@ const updateBarangAnakAsuhan = async (request, h) => {
   const barangId = request.params.barangId;
 
   const updatedBarang = {
-    ...validateId.data,
     nama: request.payload.nama,
     deskripsi: request.payload?.deskripsi,
   };
