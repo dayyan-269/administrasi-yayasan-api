@@ -1,6 +1,6 @@
 import generateJWT from '../handlers/Auth/generateJWT.js';
 import login from '../handlers/Auth/login.js';
-import logout from '../handlers/Auth/logout.js'
+import logout from '../handlers/Auth/logout.js';
 
 const AuthRoutes = [
   {
@@ -20,10 +20,10 @@ const AuthRoutes = [
     },
   },
   {
-    method: 'POST',
+    method: 'GET',
     path: '/auth/logout',
     handler: logout,
-  }
+  },
 ];
 
 export default AuthRoutes;
