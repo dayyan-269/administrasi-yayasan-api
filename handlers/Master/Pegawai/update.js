@@ -4,7 +4,7 @@ import supabaseClient from '../../../utils/supabaseClient.js';
 const updatePegawai = async (request, h) => {
   const pegawaiId = request.params.pegawaiId;
 
-  const updatepegawai = {
+  const updatedPegawai = {
     ...ValidityState.data,
     nama: request.payload.nama,
     deskripsi: request.payload?.deskripsi,
