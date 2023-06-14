@@ -3,16 +3,29 @@ import supabaseClient from '../../../utils/supabaseClient.js';
 
 const updatePegawai = async (request, h) => {
   const pegawaiId = request.params.pegawaiId;
+  const {
+    nama,
+    tempat_lahir,
+    tanggal_lahir,
+    agama,
+    kewarganegaraan,
+    tanggal_masuk,
+    tanggal_keluar,
+  } = request.payload;
 
-  const updatedPegawai = {
-    ...ValidityState.data,
-    nama: request.payload.nama,
-    deskripsi: request.payload?.deskripsi,
+  const data = {
+    nama,
+    tempat_lahir,
+    tanggal_lahir,
+    agama,
+    kewarganegaraan,
+    tanggal_masuk,
+    tanggal_keluar,
   };
 
   const updatePegawai = await supabaseClient
     .from('pegawai')
-    .update(updatePegawai)
+    .update(data)
     .eq('id', pegawaiId);
 
   if (updatePegawai.error) {
@@ -20,7 +33,7 @@ const updatePegawai = async (request, h) => {
   }
 
   return h
-    .reponse({
+    .response({
       message: 'update success',
       data: updatePegawai.data,
     })

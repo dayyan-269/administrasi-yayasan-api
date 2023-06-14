@@ -2,10 +2,25 @@ import * as Boom from '@hapi/boom';
 
 import supabaseClient from '../../../utils/supabaseClient.js';
 
-const createPegawai = async (Request, h) => {
+const createPegawai = async (request, h) => {
+  const {
+    nama,
+    tempat_lahir,
+    tanggal_lahir,
+    agama,
+    kewarganegaraan,
+    tanggal_masuk,
+    tanggal_keluar,
+  } = request.payload;
+
   const data = {
-    nama: request.payload.nama,
-    deskripsi: request.payload?.deskripsi,
+    nama,
+    tempat_lahir,
+    tanggal_lahir,
+    agama,
+    kewarganegaraan,
+    tanggal_masuk,
+    tanggal_keluar,
   };
 
   const result = await supabaseClient.from('pegawai').insert(data);
