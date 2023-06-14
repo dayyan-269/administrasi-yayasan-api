@@ -1,7 +1,7 @@
 import supabaseClient from '../../../utils/supabaseClient.js';
 import * as Boom from '@hapi/boom';
 
-const deletePegawai = async (Request, h) => {
+const deletePegawai = async (request, h) => {
   const pegawaiId = request.params.pegawaiId;
 
   const deletePegawai = await supabaseClient
