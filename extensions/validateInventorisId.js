@@ -10,7 +10,7 @@ const validateInventorisId = async (request, h) => {
     .eq('id', inventorisId);
 
   if (validateInventorisId.error) {
-    return Boom.internal(validateInventorisId.error);
+    return Boom.internal(validateInventorisId.error.message);
   }
 
   if (validateInventorisId.count === 0) {

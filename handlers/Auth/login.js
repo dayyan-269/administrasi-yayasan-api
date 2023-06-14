@@ -1,24 +1,28 @@
+import * as Boom from '@hapi/boom';
+
 import supabaseClient from '../../utils/supabaseClient.js';
-import generateJWT from '../../utils/generateJWT.js'
+import generateJWT from '../../utils/generateJWT.js';
 
 const login = async (request, h) => {
-    const credential = {
-        email: request.payload.email,
-        password: request.payload.password,
-    };
+  const credential = {
+    email: request.payload.email,
+    password: request.payload.password,
+  };
 
-    const loginUser = await supabaseClient.auth.signInWithPassword(credential);
+  const loginUser = await supabaseClient.auth.signInWithPassword(credential);
 
-    if (loginUser.error) {
-        return h.response(loginUser.error).code(500);
-    }
+  if (loginUser.error) {
+    throw new Boom.internal(login.error);
+  }
 
-    const jwt = generateJWT();
+  const jwt = generateJWT();
 
-    return h.response({
-        message: 'login success',
-        jwt
-    }).code(201);
-}
+  return h
+    .response({
+      message: 'login success',
+      data: { jwt },
+    })
+    .code(201);
+};
 
 export default login;
