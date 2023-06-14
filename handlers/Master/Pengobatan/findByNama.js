@@ -6,11 +6,11 @@ const findPengobatanByNama = async (request, h) => {
 
   const findPengobatan = await supabaseClient
     .from('pengobatan')
-    .select()
-    .ilike('nama', `%${nama}%`);
+    .select('*, kebutuhan_medis!inner(nama)')
+    .ilike('kebutuhan_medis.nama', `%${nama}%`);
 
   if (findPengobatan.error) {
-    throw Boom.internal(findPengobatan.error);
+    throw Boom.internal(findPengobatan.error.message);
   }
 
   return h
