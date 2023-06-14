@@ -3,7 +3,7 @@ import BarangAnakAsuhanRoutes from './routes/BarangAnakAsuhanRoutes.js';
 import InventorisRoutes from './routes/InventorisRoutes.js';
 import JenisKetunaanRoutes from './routes/JenisKetunaanRoutes.js';
 import KebutuhanMedisRoutes from './routes/KebutuhanMedisRoutes.js';
-import PengobatanRoutes from './routes/pengobatanRoutes.js';
+import PengobatanRoutes from './routes/PengobatanRoutes.js';
 
 let routes = [
   {
