@@ -13,7 +13,7 @@ const findBarangAnakAsuhanById = async (request, h) => {
     .single();
 
   if (findBarang.error) {
-    throw Boom.internal(findBarang.error);
+    throw new Boom.internal(findBarang.error);
   }
 
   return h

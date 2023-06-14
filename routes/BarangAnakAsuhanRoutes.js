@@ -6,7 +6,7 @@ import updateBarangAnakAsuhan from '../handlers/Master/BarangAnakAsuhan/update.j
 import deleteBarangAnakAsuhan from '../handlers/Master/BarangAnakAsuhan/delete.js';
 
 // Schemas
-import BarangAnakAsuhanSchema from '../Schemas/BarangAnakAsuhanSchema.js';
+import BarangAnakAsuhanSchema from '../schemas/BarangAnakAsuhanSchema.js';
 
 // Extensions
 import validateBarangAnakAsuhanId from '../extensions/validateBarangAnakAsuhanId.js';

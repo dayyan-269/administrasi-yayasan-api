@@ -1,27 +1,38 @@
 import * as Boom from '@hapi/boom';
 import supabaseClient from '../../../utils/supabaseClient.js';
 
-const updateInventoris = async (Request, h) => {
+const updateInventoris = async (request, h) => {
   const inventorisId = request.params.inventorisId;
 
-  const updateInventoris = {
-    nama: request.payload.nama,
-    deskripsi: request.payload?.deskripsi,
+  const {
+    barang_anak_asuhan_id,
+    anak_asuhan_id,
+    kuantitas,
+    keterangan,
+    tanggal_masuk,
+  } = request.payload;
+
+  const data = {
+    barang_anak_asuhan_id,
+    anak_asuhan_id,
+    kuantitas,
+    keterangan,
+    tanggal_masuk,
   };
 
   const updateInventori = await supabaseClient
     .from('inventoris')
-    .update(updateInventoris);
-  eq('id', inventorisId);
-
-  if (updateInventoris.error) {
-    throw Boom.internal(inventorisId);
+    .update(data)
+    .eq('id', inventorisId);
+  console.log(updateInventori);
+  if (updateInventori.error) {
+    throw Boom.internal(updateInventori.error.message);
   }
 
   return h
     .response({
       message: 'update success',
-      data: updateInventoris.data,
+      data: updateInventori.data,
     })
     .code(201);
 };
