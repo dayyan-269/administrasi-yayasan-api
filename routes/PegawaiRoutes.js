@@ -6,7 +6,7 @@ import updatePegawai from '../handlers/Master/Pegawai/update.js';
 import deletePegawai from '../handlers/Master/Pegawai/delete.js';
 
 // Schemas
-import pegawaiSchema from '../Schemas/PegawaiSchema.js';
+import PegawaiSchema from '../Schemas/PegawaiSchema.js';
 
 // Extensions
 import validatePegawaiId from '../extensions/validatePegawaiId.js';
@@ -49,7 +49,7 @@ const PegawaiRoutes = [
     handler: updatePegawai,
     options: {
       validate: {
-        payload: pegawaiSchema,
+        payload: PegawaiSchema,
       },
       ext: {
         onPreHandler: { method: validatePegawaiId },
