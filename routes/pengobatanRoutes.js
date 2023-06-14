@@ -3,7 +3,7 @@ import listPengobatan from '../handlers/Master/Pengobatan/list.js';
 import findPengobatanById from '../handlers/Master/Pengobatan/findById.js';
 import createPengobatan from '../handlers/Master/Pengobatan/create.js';
 import updatePengobatan from '../handlers/Master/Pengobatan/update.js';
-import deletePengobatan from '../handlers/Master/Pengobatan/update.js';
+import deletePengobatan from '../handlers/Master/Pengobatan/delete.js';
 
 // Schemas
 import PengobatanSchema from '../Schemas/PengobatanSchema.js';
