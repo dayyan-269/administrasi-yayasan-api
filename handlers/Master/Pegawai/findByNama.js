@@ -4,13 +4,13 @@ import supabaseClient from '../../../utils/supabaseClient.js';
 const findPegawaiByNama = async (request, h) => {
   const { nama } = request.query;
 
-  const findBarang = await supabaseClient
+  const findPegawai = await supabaseClient
     .from('pegawai')
     .select()
     .ilike('nama', `%${nama}%`);
 
   if (findPegawai.error) {
-    throw Boom.internal(findBarang.error);
+    throw Boom.internal(findPegawai.error);
   }
 
   return h
