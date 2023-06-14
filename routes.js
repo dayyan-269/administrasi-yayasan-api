@@ -1,5 +1,7 @@
 import AuthRoutes from './routes/AuthRoutes.js';
 import BarangAnakAsuhanRoutes from './routes/BarangAnakAsuhanRoutes.js';
+import JenisKetunaanRoutes from './routes/JenisKetunaanRoutes.js';
+import KebutuhanMedisRoutes from './routes/KebutuhanMedisRoutes.js';
 
 let routes = [
   {
@@ -17,6 +19,11 @@ let routes = [
 ];
 
 // Setiap penambahan routes perlu ditambahkan
-routes = routes.concat(BarangAnakAsuhanRoutes, AuthRoutes);
+routes = routes.concat(
+  AuthRoutes,
+  BarangAnakAsuhanRoutes,
+  JenisKetunaanRoutes,
+  KebutuhanMedisRoutes
+);
 
 export default routes;

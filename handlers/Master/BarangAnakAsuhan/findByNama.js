@@ -11,7 +11,7 @@ const findBarangAnakAsuhanByNama = async (request, h) => {
     .ilike('nama', `%${nama}%`);
 
   if (findBarang.error) {
-    throw Boom.internal(findBarang.error);
+    throw new Boom.internal(findBarang.error);
   }
 
   return h
