@@ -1,13 +1,13 @@
-import * as Boom from '@hapi/boom';
-import supabaseClient from '../../../utils/supabaseClient.js';
+import * as Boom from "@hapi/boom";
+import supabaseClient from "../../utils/supabaseClient.js";
 
 const findInventorisById = async (request, h) => {
   const inventorisId = request.params.inventorisId;
 
   const findInventoris = await supabaseClient
-    .from('inventoris')
+    .from("inventoris")
     .select()
-    .eq('id', inventorisId)
+    .eq("id", inventorisId)
     .limit(1)
     .single();
 
@@ -17,7 +17,7 @@ const findInventorisById = async (request, h) => {
 
   return h
     .response({
-      message: 'find success',
+      message: "find success",
       data: findInventoris.data,
     })
     .code(200);

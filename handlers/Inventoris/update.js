@@ -1,5 +1,5 @@
-import * as Boom from '@hapi/boom';
-import supabaseClient from '../../../utils/supabaseClient.js';
+import * as Boom from "@hapi/boom";
+import supabaseClient from "../../utils/supabaseClient.js";
 
 const updateInventoris = async (request, h) => {
   const inventorisId = request.params.inventorisId;
@@ -21,9 +21,9 @@ const updateInventoris = async (request, h) => {
   };
 
   const updateInventori = await supabaseClient
-    .from('inventoris')
+    .from("inventoris")
     .update(data)
-    .eq('id', inventorisId);
+    .eq("id", inventorisId);
   console.log(updateInventori);
   if (updateInventori.error) {
     throw Boom.internal(updateInventori.error.message);
@@ -31,7 +31,7 @@ const updateInventoris = async (request, h) => {
 
   return h
     .response({
-      message: 'update success',
+      message: "update success",
       data: updateInventori.data,
     })
     .code(201);
