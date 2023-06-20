@@ -1,19 +1,20 @@
-import AuthRoutes from './routes/AuthRoutes.js';
-import BarangAnakAsuhanRoutes from './routes/BarangAnakAsuhanRoutes.js';
-import InventorisRoutes from './routes/InventorisRoutes.js';
-import JenisKetunaanRoutes from './routes/JenisKetunaanRoutes.js';
-import KebutuhanMedisRoutes from './routes/KebutuhanMedisRoutes.js';
-import PegawaiRoutes from './routes/PegawaiRoutes.js';
-import PengobatanRoutes from './routes/PengobatanRoutes.js';
-import StatsRoutes from './routes/StatsRoutes.js';
+import AuthRoutes from "./routes/AuthRoutes.js";
+import BarangAnakAsuhanRoutes from "./routes/BarangAnakAsuhanRoutes.js";
+import InventorisRoutes from "./routes/InventorisRoutes.js";
+import JenisKetunaanRoutes from "./routes/JenisKetunaanRoutes.js";
+import JenisPenyakitRoutes from "./routes/JenisPenyakitRoutes.js";
+import KebutuhanMedisRoutes from "./routes/KebutuhanMedisRoutes.js";
+import PegawaiRoutes from "./routes/PegawaiRoutes.js";
+import PengobatanRoutes from "./routes/PengobatanRoutes.js";
+import StatsRoutes from "./routes/StatsRoutes.js";
 
 let routes = [
   {
-    method: 'GET',
-    path: '/',
+    method: "GET",
+    path: "/",
     handler: () => {
       return {
-        title: 'Rest API untuk web administrasi yayasan',
+        title: "Rest API untuk web administrasi yayasan",
       };
     },
     options: {
@@ -28,10 +29,11 @@ routes = routes.concat(
   BarangAnakAsuhanRoutes,
   JenisKetunaanRoutes,
   KebutuhanMedisRoutes,
-  InventorisRoutes,
+  //InventorisRoutes,
   PengobatanRoutes,
   PegawaiRoutes,
   StatsRoutes,
+  JenisPenyakitRoutes
 );
 
 export default routes;
