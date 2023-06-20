@@ -1,5 +1,5 @@
-import * as Boom from '@hapi/boom';
-import supabaseClient from '../../../utils/supabaseClient.js';
+import * as Boom from "@hapi/boom";
+import supabaseClient from "../../utils/supabaseClient.js";
 
 const createInventoris = async (request, h) => {
   const {
@@ -18,14 +18,14 @@ const createInventoris = async (request, h) => {
     tanggal_masuk,
   };
 
-  const result = await supabaseClient.from('inventoris').insert(data);
+  const result = await supabaseClient.from("inventoris").insert(data);
 
   console.log(result.error);
   if (result.error) {
     throw new Boom.badData(result.error.message);
   }
 
-  return h.response({ message: 'new item created' }.code(201));
+  return h.response({ message: "new item created" }.code(201));
 };
 
 export default createInventoris;

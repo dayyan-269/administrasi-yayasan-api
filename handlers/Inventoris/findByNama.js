@@ -1,13 +1,13 @@
-import * as Boom from '@hapi/boom';
-import supabaseClient from '../../../utils/supabaseClient.js';
+import * as Boom from "@hapi/boom";
+import supabaseClient from "../../utils/supabaseClient.js";
 
 const findInventorisByNama = async (Request, h) => {
   const { nama } = Request.query;
 
   const findInventoris = await supabaseClient
-    .form('inventoris')
+    .form("inventoris")
     .select()
-    .ilike('nama', `%${nama}`);
+    .ilike("nama", `%${nama}`);
 
   if (findInventoris.error) {
     throw new Boom.internal(findInventoris.error);
@@ -15,7 +15,7 @@ const findInventorisByNama = async (Request, h) => {
 
   return h
     .response({
-      message: 'find success',
+      message: "find success",
       data: findInventoris.nama,
     })
     .code(200);
