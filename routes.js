@@ -1,12 +1,13 @@
-import AuthRoutes from "./routes/AuthRoutes.js";
-import BarangAnakAsuhanRoutes from "./routes/BarangAnakAsuhanRoutes.js";
-import InventorisRoutes from "./routes/InventorisRoutes.js";
-import JenisKetunaanRoutes from "./routes/JenisKetunaanRoutes.js";
+import AuthRoutes from './routes/AuthRoutes.js';
+import BarangAnakAsuhanRoutes from './routes/BarangAnakAsuhanRoutes.js';
+import InventorisRoutes from './routes/InventorisRoutes.js';
+import JenisKetunaanRoutes from './routes/JenisKetunaanRoutes.js';
+import KebutuhanMedisRoutes from './routes/KebutuhanMedisRoutes.js';
+import PegawaiRoutes from './routes/PegawaiRoutes.js';
+import PengobatanRoutes from './routes/PengobatanRoutes.js';
+import StatsRoutes from './routes/StatsRoutes.js';
+import ObservasiRoutes from './routes/ObservasiRoutes.js';
 import JenisPenyakitRoutes from "./routes/JenisPenyakitRoutes.js";
-import KebutuhanMedisRoutes from "./routes/KebutuhanMedisRoutes.js";
-import PegawaiRoutes from "./routes/PegawaiRoutes.js";
-import PengobatanRoutes from "./routes/PengobatanRoutes.js";
-import StatsRoutes from "./routes/StatsRoutes.js";
 
 let routes = [
   {
@@ -33,7 +34,9 @@ routes = routes.concat(
   PengobatanRoutes,
   PegawaiRoutes,
   StatsRoutes,
+  ObservasiRoutes,
   JenisPenyakitRoutes
+
 );
 
 export default routes;
