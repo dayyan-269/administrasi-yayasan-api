@@ -6,6 +6,7 @@ import KebutuhanMedisRoutes from './routes/KebutuhanMedisRoutes.js';
 import PegawaiRoutes from './routes/PegawaiRoutes.js';
 import PengobatanRoutes from './routes/PengobatanRoutes.js';
 import StatsRoutes from './routes/StatsRoutes.js';
+import ObservasiRoutes from './routes/ObservasiRoutes.js';
 
 let routes = [
   {
@@ -32,6 +33,7 @@ routes = routes.concat(
   PengobatanRoutes,
   PegawaiRoutes,
   StatsRoutes,
+  ObservasiRoutes,
 );
 
 export default routes;
