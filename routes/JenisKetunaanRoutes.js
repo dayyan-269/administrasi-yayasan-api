@@ -5,7 +5,7 @@ import deleteJenisKetunaan from '../handlers/Master/JenisKetunaan/delete.js';
 import updateJenisKetunaan from '../handlers/Master/JenisKetunaan/update.js';
 
 //Schema
-import JenisKetunaanSchema from '../Schemas/JenisKetunaanSchema.js';
+import JenisKetunaanSchema from '../schemas/JenisKetunaanSchema.js';
 
 //Extensions
 import validateJenisKetunaanId from '../extensions/validateJenisKetunaanId.js';

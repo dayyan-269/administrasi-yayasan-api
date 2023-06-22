@@ -6,7 +6,7 @@ import updateKebutuhanMedis from '../handlers/Master/KebutuhanMedis/update.js';
 import deleteKebutuhanMedis from '../handlers/Master/KebutuhanMedis/delete.js';
 
 // Schemas
-import KebutuhanMedisSchema from '../Schemas/KebutuhanMedisSchema.js';
+import KebutuhanMedisSchema from '../schemas/KebutuhanMedisSchema.js';
 
 // Extension
 import validateKebutuhanMedisId from '../extensions/validateKebutuhanMedisId.js';

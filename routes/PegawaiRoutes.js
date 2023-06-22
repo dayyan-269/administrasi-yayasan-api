@@ -6,7 +6,7 @@ import updatePegawai from '../handlers/Master/Pegawai/update.js';
 import deletePegawai from '../handlers/Master/Pegawai/delete.js';
 
 // Schemas
-import PegawaiSchema from '../Schemas/PegawaiSchema.js';
+import PegawaiSchema from '../schemas/PegawaiSchema.js';
 
 // Extensions
 import validatePegawaiId from '../extensions/validatePegawaiId.js';

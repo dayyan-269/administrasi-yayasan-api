@@ -6,7 +6,7 @@ import updatePengobatan from '../handlers/Master/Pengobatan/update.js';
 import deletePengobatan from '../handlers/Master/Pengobatan/delete.js';
 
 // Schemas
-import PengobatanSchema from '../Schemas/PengobatanSchema.js';
+import PengobatanSchema from '../schemas/PengobatanSchema.js';
 
 // Exstensions
 import validatePengobatanId from '../extensions/validatePengobatanId.js';
