@@ -12,7 +12,7 @@ const login = async (request, h) => {
   const loginUser = await supabaseClient.auth.signInWithPassword(credential);
 
   if (loginUser.error) {
-    throw new Boom.internal(login.error);
+    throw new Boom.badData(loginUser.error.message);
   }
 
   const jwt = await generateJWT();
@@ -21,7 +21,7 @@ const login = async (request, h) => {
   return h
     .response({
       message: 'login success',
-      data: {},
+      data: { jwt },
     })
     .code(201);
 };

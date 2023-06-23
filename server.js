@@ -11,11 +11,15 @@ const init = async () => {
   const server = Hapi.server({
     port: process.env.PORT || 10000,
     host: process.env.HOST || 'localhost',
+    routes: {
+      cors: true,
+    },
   });
 
   await server.register(Jwt);
+
   server.auth.strategy('jwt_auth', 'jwt', JWTPlugin);
-  server.auth.default('jwt_auth');
+  //server.auth.default('jwt_auth');
 
   server.route(routes);
 

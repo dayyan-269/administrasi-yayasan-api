@@ -23,6 +23,9 @@ const AuthRoutes = [
     method: 'GET',
     path: '/auth/logout',
     handler: logout,
+    options: {
+      auth: false,
+    },
   },
 ];
 
