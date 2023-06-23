@@ -15,12 +15,13 @@ const login = async (request, h) => {
     throw new Boom.internal(login.error);
   }
 
-  const jwt = generateJWT();
+  const jwt = await generateJWT();
+  h.state('token', jwt);
 
   return h
     .response({
       message: 'login success',
-      data: { jwt },
+      data: {},
     })
     .code(201);
 };
