@@ -20,7 +20,7 @@ const PengobatanRoutes = [
   },
   {
     method: 'GET',
-    path: '/Pengobatan/{pengobatanId}',
+    path: '/pengobatan/{pengobatanId}',
     handler: findPengobatanById,
     options: {
       ext: {

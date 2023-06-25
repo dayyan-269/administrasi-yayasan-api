@@ -19,7 +19,7 @@ const init = async () => {
   await server.register(Jwt);
 
   server.auth.strategy('jwt_auth', 'jwt', JWTPlugin);
-  //server.auth.default('jwt_auth');
+  server.auth.default('jwt_auth');
 
   server.route(routes);
 
