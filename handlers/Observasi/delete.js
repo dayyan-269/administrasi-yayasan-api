@@ -8,13 +8,12 @@ const deleteObservasi = async (request, h) => {
     .from('observasi')
     .delete()
     .eq('id', observasiId);
-console.log(deleteObservasi);
+
   if (deleteObservasi.error) {
     throw Boom.internal(deleteObservasi.error);
   }
 
   return h.response({ message: 'Id berhasil dihapus' }).code(200);
-
-}
+};
 
 export default deleteObservasi;

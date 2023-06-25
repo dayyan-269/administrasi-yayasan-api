@@ -5,8 +5,8 @@ const findObservasiByNama = async (request, h) => {
   const { observasiId } = request.query;
 
   const findObservasi = await supabaseClient
-    .from('anak_asuhan_id')
-    .select()
+    .from('observasi')
+    .select('*, anak_asuhan!inner(nama)')
     .ilike('nama', `%${nama}%`);
 
   if (findObservasi.error) {

@@ -7,7 +7,7 @@ const findObservasiById = async (request, h) => {
 
   const result = await supabaseClient
     .from('observasi')
-    .select()
+    .select('*, anak_asuhan!inner(nama)')
     .eq('id', observasiId)
     .limit(1)
     .single();
