@@ -6,12 +6,13 @@ const findPengobatanById = async (request, h) => {
 
   const findPengobatan = await supabaseClient
     .from('pengobatan')
-    .select()
+    .select('*, kebutuhan_medis!inner(nama)')
     .eq('id', pengobatanId)
     .limit(1)
     .single();
 
   if (findPengobatan.error) {
+    console.error(findPengobatan.error.message);
     throw Boom.internal(findPengobatan.error);
   }
 

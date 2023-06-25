@@ -2,9 +2,12 @@ import * as Boom from '@hapi/boom';
 import supabaseClient from '../../../utils/supabaseClient.js';
 
 const listPengobatan = async (request, h) => {
-  const result = await supabaseClient.from('pengobatan').select();
+  const result = await supabaseClient
+    .from('pengobatan')
+    .select('*, anak_asuhan!inner(nama)');
 
   if (result.error) {
+    console.error(result.error.message);
     throw Boom.internal(result.error);
   }
 
