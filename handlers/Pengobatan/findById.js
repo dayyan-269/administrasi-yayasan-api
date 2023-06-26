@@ -1,5 +1,5 @@
 import * as Boom from '@hapi/boom';
-import supabaseClient from '../../../utils/supabaseClient.js';
+import supabaseClient from '../../utils/supabaseClient.js';
 
 const findPengobatanById = async (request, h) => {
   const pengobatanId = request.params.pengobatanId;

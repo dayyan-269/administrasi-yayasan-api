@@ -1,5 +1,5 @@
 import * as Boom from '@hapi/boom';
-import supabaseClient from '../../../utils/supabaseClient.js';
+import supabaseClient from '../../utils/supabaseClient.js';
 
 const createPengobatan = async (request, h) => {
   const {

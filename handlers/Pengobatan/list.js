@@ -1,10 +1,10 @@
 import * as Boom from '@hapi/boom';
-import supabaseClient from '../../../utils/supabaseClient.js';
+import supabaseClient from '../../utils/supabaseClient.js';
 
 const listPengobatan = async (request, h) => {
   const result = await supabaseClient
     .from('pengobatan')
-    .select('*, anak_asuhan!inner(nama)');
+    .select('*, kebutuhan_medis(nama)');
 
   if (result.error) {
     console.error(result.error.message);
