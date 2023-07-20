@@ -19,6 +19,7 @@ const createAnakAsuhan = async (request, h) => {
   const result = await supabaseClient.from('anak_asuhan').insert(data);
 
   if (result.error) {
+    console.log(result.error);
     throw new Boom.badData(result.error);
   }
 
