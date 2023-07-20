@@ -12,7 +12,9 @@ const init = async () => {
     port: process.env.PORT || 10000,
     host: process.env.HOST || 'localhost',
     routes: {
-      cors: false,
+      cors: {
+        origin: ['http://localhost:3000'],
+      },
     },
   });
 
