@@ -7,15 +7,16 @@ import PegawaiRoutes from './routes/PegawaiRoutes.js';
 import PengobatanRoutes from './routes/PengobatanRoutes.js';
 import StatsRoutes from './routes/StatsRoutes.js';
 import ObservasiRoutes from './routes/ObservasiRoutes.js';
-import JenisPenyakitRoutes from "./routes/JenisPenyakitRoutes.js";
+import JenisPenyakitRoutes from './routes/JenisPenyakitRoutes.js';
+import TipePembayaran from './routes/TipePembayaranRoutes.js';
 
 let routes = [
   {
-    method: "GET",
-    path: "/",
+    method: 'GET',
+    path: '/',
     handler: () => {
       return {
-        title: "Rest API untuk web administrasi yayasan",
+        title: 'Rest API untuk web administrasi yayasan',
       };
     },
     options: {
@@ -35,8 +36,8 @@ routes = routes.concat(
   PegawaiRoutes,
   StatsRoutes,
   ObservasiRoutes,
-  JenisPenyakitRoutes
-
+  JenisPenyakitRoutes,
+  TipePembayaran
 );
 
 export default routes;
