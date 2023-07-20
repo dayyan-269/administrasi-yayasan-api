@@ -13,7 +13,7 @@ const init = async () => {
     host: process.env.HOST || 'localhost',
     routes: {
       cors: {
-        origin: ['http://localhost:3000'],
+        origin: 'ignore',
       },
     },
   });
