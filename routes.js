@@ -8,7 +8,8 @@ import PengobatanRoutes from './routes/PengobatanRoutes.js';
 import StatsRoutes from './routes/StatsRoutes.js';
 import ObservasiRoutes from './routes/ObservasiRoutes.js';
 import JenisPenyakitRoutes from './routes/JenisPenyakitRoutes.js';
-import TipePembayaran from './routes/TipePembayaranRoutes.js';
+import TipePembayaranRoutes from './routes/TipePembayaranRoutes.js';
+import AnakAsuhanRoutes from './routes/AnakAsuhanRoutes.js';
 
 let routes = [
   {
@@ -37,7 +38,8 @@ routes = routes.concat(
   StatsRoutes,
   ObservasiRoutes,
   JenisPenyakitRoutes,
-  TipePembayaran
+  TipePembayaranRoutes,
+  AnakAsuhanRoutes
 );
 
 export default routes;
