@@ -8,16 +8,16 @@ const validatePegawaiId = async (request, h) => {
     .from('observasi')
     .select('*', { count: 'exact', head: true })
     .eq('id', observasiId);
-console.log(result);
+
   if (result.error) {
     throw new Boom.internal(result.error.message);
   }
 
   if (result.count === 0) {
     throw new Boom.notFound('observasi tidak ditemukan');
-   }
-    
-return h.continue;
+  }
+
+  return h.continue;
 };
 
 export default validatePegawaiId;
