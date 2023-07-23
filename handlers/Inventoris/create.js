@@ -24,7 +24,7 @@ const createInventoris = async (request, h) => {
     throw new Boom.badData(result.error.message);
   }
 
-  return h.response({ message: 'new item created' }.code(201));
+  return h.response({ message: 'new item created' }).code(201);
 };
 
 export default createInventoris;
