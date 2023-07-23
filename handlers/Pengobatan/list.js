@@ -4,7 +4,7 @@ import supabaseClient from '../../utils/supabaseClient.js';
 const listPengobatan = async (request, h) => {
   const result = await supabaseClient
     .from('pengobatan')
-    .select('*, kebutuhan_medis(nama)');
+    .select('*, kebutuhan_medis(nama), jenis_penyakit(nama)');
 
   if (result.error) {
     console.error(result.error.message);
