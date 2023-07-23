@@ -4,8 +4,10 @@ import findObservasiById from '../handlers/Observasi/findById.js';
 import deleteObservasi from '../handlers/Observasi/delete.js';
 import findObservasiByNama from '../handlers/Observasi/findByNama.js';
 import updateObservasi from '../handlers/Observasi/update.js';
+import findObservasiByAnakAsuhanId from '../handlers/Observasi/findByAnakAsuhanId.js';
 
 import validateobservasiId from '../extensions/validateObservasiId.js';
+import validateAnakAsuhanId from '../extensions/validateAnakAsuhanId.js';
 
 import ObservasiSchema from '../schemas/ObservasiSchema.js';
 
@@ -34,6 +36,11 @@ const ObservasiRoutes = [
         onPreHandler: { method: validateobservasiId },
       },
     },
+  },
+  {
+    method: 'GET',
+    path: '/observasi/detail/{anakAsuhanId}',
+    handler: findObservasiByAnakAsuhanId,
   },
   {
     method: 'DELETE',

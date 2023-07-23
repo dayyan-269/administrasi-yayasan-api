@@ -2,6 +2,7 @@
 import listInventoris from '../handlers/Inventoris/list.js';
 import findInventorisById from '../handlers/Inventoris/findById.js';
 import createInventoris from '../handlers/Inventoris/create.js';
+import findInventorisByAnakAsuhanId from '../handlers/Inventoris/findByAnakAsuhanId.js';
 import findInventorisByNama from '../handlers/Inventoris/findByNama.js';
 import updateInventoris from '../handlers/Inventoris/update.js';
 import deleteInventoris from '../handlers/Inventoris/delete.js';
@@ -11,6 +12,7 @@ import InventorisSchema from '../schemas/InventorisSchema.js';
 
 // Extensions
 import validateInventorisId from '../extensions/validateInventorisId.js';
+import validateAnakAsuhanId from '../extensions/validateAnakAsuhanId.js';
 
 const InventorisRoutes = [
   {
@@ -25,6 +27,16 @@ const InventorisRoutes = [
     options: {
       ext: {
         onPreHandler: { method: validateInventorisId },
+      },
+    },
+  },
+  {
+    method: 'GET',
+    path: '/inventoris/detail/{anakAsuhanId}',
+    handler: findInventorisByAnakAsuhanId,
+    options: {
+      ext: {
+        onPreHandler: { method: validateAnakAsuhanId },
       },
     },
   },

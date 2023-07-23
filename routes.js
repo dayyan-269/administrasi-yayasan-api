@@ -32,7 +32,7 @@ routes = routes.concat(
   BarangAnakAsuhanRoutes,
   JenisKetunaanRoutes,
   KebutuhanMedisRoutes,
-  //InventorisRoutes,
+  InventorisRoutes,
   PengobatanRoutes,
   PegawaiRoutes,
   StatsRoutes,
