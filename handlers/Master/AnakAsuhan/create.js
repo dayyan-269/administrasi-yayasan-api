@@ -5,21 +5,21 @@ import supabaseClient from '../../../utils/supabaseClient.js';
 const createAnakAsuhan = async (request, h) => {
   const data = {
     nama: request.payload.nama,
-    tanggal_lahir: request.payload.tanggalLahir,
-    tempat_lahir: request.payload.tempatLahir,
-    daerah_asal: request.payload.daerahAsal,
-    tinggi_badan: request.payload.tinggiBadan,
-    berat_badan: request.payload.beratBadan,
-    tanggal_masuk: request.payload.tanggalMasuk,
-    tanggal_keluar: request.payload.tanggalKeluar,
-    jenis_ketunaan: request.payload.jenisKetunaan,
-    tipe_pembayaran_id: request.payload.tipePembayaran,
+    tanggal_lahir: request.payload.tanggal_lahir,
+    tempat_lahir: request.payload.tempat_lahir,
+    asal: request.payload.asal,
+    tinggi_badan: request.payload.tinggi_badan,
+    berat_badan: request.payload.berat_badan,
+    tanggal_masuk: request.payload.tanggal_masuk,
+    tanggal_keluar: request.payload.tanggal_keluar,
+    jenis_ketunaan_id: request.payload.jenis_ketunaan_id,
+    tipe_pembayaran: request.payload.tipe_pembayaran_id,
   };
 
   const result = await supabaseClient.from('anak_asuhan').insert(data);
 
+  console.log(data, result.error);
   if (result.error) {
-    console.log(result.error);
     throw new Boom.badData(result.error);
   }
 

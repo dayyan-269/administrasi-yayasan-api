@@ -3,7 +3,7 @@ import * as Boom from '@hapi/boom';
 import supabaseClient from '../../../utils/supabaseClient.js';
 
 const listAnakAsuhan = async (request, h) => {
-  const result = await supabaseClient.from('anak_asuhan').select();
+  const result = await supabaseClient.from('anak_asuhan').select('*, tipe_pembayaran(nama), jenis_ketunaan(nama)');
 
   if (result.error) {
     throw Boom.internal(result.error);

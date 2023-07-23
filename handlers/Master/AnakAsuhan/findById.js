@@ -2,26 +2,26 @@ import * as Boom from '@hapi/boom';
 
 import supabaseClient from '../../../utils/supabaseClient.js';
 
-const findPembayaranById = async (request, h) => {
-  const pembayaranId = request.params.pembayaranId;
+const findAnakAsuhanById = async (request, h) => {
+  const { anakAsuhanId } = request.params;
 
-  const findPembayaran = await supabaseClient
-    .from('tipe_pembayaran')
+  const findAnakAsuhan = await supabaseClient
+    .from('anak_asuhan')
     .select()
-    .eq('id', pembayaranId)
+    .eq('id', anakAsuhanId)
     .limit(1)
     .single();
 
-  if (findPembayaran.error) {
-    throw new Boom.internal(findPembayaran.error);
+  if (findAnakAsuhan.error) {
+    throw new Boom.internal(findAnakAsuhan.error);
   }
 
   return h
     .response({
       message: 'find success',
-      data: findPembayaran.data,
+      data: findAnakAsuhan.data,
     })
     .code(200);
 };
 
-export default findPembayaranById;
+export default findAnakAsuhanById;
